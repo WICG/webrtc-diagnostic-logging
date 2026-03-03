@@ -5,3 +5,6 @@ index.html: index.bs
 
 check: index.bs
 	curl https://api.csswg.org/bikeshed/ -F file=@index.bs -F output=err
+
+distcheck: index.bs
+	curl https://api.csswg.org/bikeshed/ -F file=@index.bs -F output=err
