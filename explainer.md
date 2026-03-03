@@ -18,14 +18,14 @@ providing information that can help fix bugs in or improve the user agent.
 
 ## 2. Goals
 *  Help developers troubleshoot WebRTC applications by allowing the user agent
-   to collect local internal diagnostic logs that provide insight into WebRTC
-   sessions.
+   to collect internal diagnostic data into local logs files that provide
+   insight into WebRTC sessions.
 *  Allow users and application developers to collaborate with user agents by
    making it possible to share diagnostic logs with the user agent.
 
 ## 3. Non-Goals
 The following are explicit non-goals
-* The proposed API does not provide a mechanism to share information about
+* The proposed API does not provide a mechanism to share diagnostic data about
   WebRTC sessions with the application. That is, the API does not expose any
   diagnostic information to the application other than a unique ID that can
   be used to identify a WebRTC logging session.
@@ -52,7 +52,6 @@ await navigator.rtc.startDiagnosticLogging();
 
 // When a call ends normally
 await navigator.rtc.finishDiagnosticLogging();
-
 
 // When a situation occurs where the diagnostic data is not useful
 await navigator.rtc.cancelLogging();
@@ -89,6 +88,11 @@ detail and the mechanism used for this purpose is not specified. The only
 requirement is that it must be explicitly authorized by the user.
 
 The API also allows the application to attach metadata to the logs. To prevent
-abuse, API enforces limits on the size of the metadata. Specifically, no more
-than 5 key-value pairs can be attached, and each key and each value must be
+abuse, the API enforces limits on the size of the metadata. Specifically, no
+more than 5 key-value pairs can be attached, and each key and each value must be
 no greater than 100 characters.
+
+## Stakeholder Feedback / Opposition
+
+- Google (implementor) : Positive
+- ByteDance (stakeholder) : [Positive](https://github.com/w3c/webrtc-extensions/issues/124)
