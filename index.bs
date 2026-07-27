@@ -2,10 +2,10 @@
 Title: WebRTC Diagnostic Logging API
 Shortname: webrtc-diagnostic-logging
 Level: 1
-Status: UD
+Status: CG-DRAFT
 Org: W3C
 Group: WICG
-ED: https://github.com/guidou/webrtc-diagnostic-logging/
+ED: https://wicg.github.io/webrtc-diagnostic-logging/
 Editor: Guido Urdaneta, Google
 Abstract: This specification defines an API to manage internal WebRTC diagnostic logs.
 Markup Shorthands: markdown yes, css yes
