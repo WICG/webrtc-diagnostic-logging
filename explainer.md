@@ -90,17 +90,16 @@ spec does not define a specific authorization mechanism, but possible schemes
 could include UI controls, prompts, enterprise policies, or any combination
 thereof.
 
-The collected data is stored locally as files, which are accessible to the user.
+The collected data is stored locally, in an implementation-defined manner.
 The API provides an option to share the collected diagnostic logs with the user
-agent developers by allowing the user agent to upload the logs to an endpoint
-internally provided by the user agent. This collection is an implementation
-detail and the mechanism used for this purpose is not specified. The only
-requirement is that it must be explicitly authorized by the user.
+agent vendor via an implementation-defined mechanism. The only for these
+implementation details is that all operations must be explicitly authorized by
+the user.
 
-The API also allows the application to attach metadata to the logs. To prevent
-abuse, the API enforces limits on the size of the metadata. Specifically, no
-more than 5 key-value pairs can be attached, and each key and each value must be
-no greater than 100 characters.
+The API also allows the application to attach metadata to the logs when starting
+and finishing the logging session. To prevent abuse, the API enforces limits on
+the size of the metadata. Specifically, no more than 5 key-value pairs can be
+attached, and each key and each value must be no greater than 100 characters.
 
 ## Stakeholder Feedback / Opposition
 
