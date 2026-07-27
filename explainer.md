@@ -13,8 +13,11 @@ state and performance metrics. This also applies to issues in the user agent.
 The WebRTC Web Diagnostic Logging API allows authorized web applications to
 trigger the collection of diagnostic data in a log file so that it can be used
 for local debugging. It also allows an application to share the diagnostic
-data with the user agent, subject to user authorization, with the purpose of
-providing information that can help fix bugs in or improve the user agent.
+data with the user agent vendor, subject to user authorization, with the purpose
+of providing information that can help fix bugs in or improve the user agent.
+
+This API is mainly targeted to enterprise users, although there is nothing in
+the spec that prevents its usage in any other environments.
 
 ## 2. Goals
 *  Help developers troubleshoot and improve WebRTC applications by allowing the
@@ -78,7 +81,7 @@ await RTCPeerConnection.finishDiagnosticLogging();
 In this case, the application can file a bug report with the user agent and 
 include the id in the report, so that user-agent developers can associate the
 shared log with the bug report.
-best eff
+
 ## 5. Privacy and Security Considerations
 
 This API allows a user agent to collect internal diagnostic data about WebRTC
