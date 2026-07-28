@@ -136,7 +136,7 @@ has authorized it and the logging session has not been cancelled with the
 
 ### `finishDiagnosticLogging(options)` ### {#finish-method}
 
-The <dfn method for="RTC">cancelDiagnosticLogging(|options|)</dfn> method must
+The <dfn method for="RTC">finishDiagnosticLogging(|options|)</dfn> method must
  run these steps:
 
 1. Let |metadata| be |options|'s {{RTCFinishDiagnosticLoggingOptions/metadata}} member.
