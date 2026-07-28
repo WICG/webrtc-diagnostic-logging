@@ -12,7 +12,7 @@ No.
 
 **2.4. How do the features in your specification deal with sensitive information?**
 The feature may deal with sensitive information, but that information is never exposed to the Web.
-Logs produced by this feature are gated by explicit user consent and stored in local files.
+Logs produced by this feature are gated by explicit user consent and stored locally in a way not accessible to Web applications.
 The user can authorize sharing logs with the user agent vendor, but they are never exposed to the Web.
 
 **2.5. Does data exposed by your specification carry related but distinct information that may not be obvious to users?**
