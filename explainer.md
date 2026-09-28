@@ -72,7 +72,7 @@ await RTCPeerConnection.cancelLogging();
 The application can allow sharing the diagnostic data with the user agent
 (subject to user authorization) and add custom metadata to the log:
 ```
-let id = await RTCPeerConnection.startDiagnosticLogging({allowUpload: true, metadata: {'app':'myapp'}});
+let id = await RTCPeerConnection.startDiagnosticLogging({metadata: {'app':'myapp'}});
 sendToApplication(id);
 
 await RTCPeerConnection.finishDiagnosticLogging();
