@@ -23,7 +23,7 @@ the spec that prevents its usage in any other environments.
 *  Help developers troubleshoot and improve WebRTC applications by allowing the
    user agent to collect internal diagnostic data into local log files that
    provide insight into WebRTC sessions. An example of this is an individual
-   developer fixing a bug with the help of the logs.
+   developer fixing a bug affecting a user with the help of the logs.
 *  Help organizations troubleshoot WebRTC applications by allowing them to
    to collect internal diagnostic data that provide insight into WebRTC
    sessions. An example of this is an organization that aggregates and processes
@@ -60,22 +60,23 @@ The proposed approach is to provide a API with three operations:
 Example use for local debugging:
 ```javascript
 // Before starting a call
-await RTCPeerConnection.startDiagnosticLogging();
+RTCPeerConnection.startDiagnosticLogging();
 
-// When a call ends normally
-await RTCPeerConnection.finishDiagnosticLogging();
+// When a situation occurs where the diagnostic data is useful (e.g., the call
+// ends, or the user reports a problem to the app)
+RTCPeerConnection.finishDiagnosticLogging();
 
 // When a situation occurs where the diagnostic data is not useful
-await RTCPeerConnection.cancelLogging();
+RTCPeerConnection.cancelLogging();
 ```
 
 The application can allow sharing the diagnostic data with the user agent
 (subject to user authorization) and add custom metadata to the log:
 ```
-let id = await RTCPeerConnection.startDiagnosticLogging({metadata: {'app':'myapp'}});
+let id = RTCPeerConnection.startDiagnosticLogging({metadata: {'app':'myapp'}});
 sendToApplication(id);
 
-await RTCPeerConnection.finishDiagnosticLogging();
+RTCPeerConnection.finishDiagnosticLogging();
 ```
 
 In this case, the application can file a bug report with the user agent and 
