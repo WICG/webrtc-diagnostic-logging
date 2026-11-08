@@ -136,9 +136,9 @@ When this method is invoked, the [= user agent =] MUST run the following steps:
 The user agent MUST NOT log any WebRTC-related activity once the logging session
 has stopped.
 
-### `discardDiagnosticLogging()` ### {#cancel-method}
+### `cancelDiagnosticLogging()` ### {#cancel-method}
 
-The <dfn method for="RTC">discardDiagnosticLogging()</dfn> method cancels an
+The <dfn method for="RTC">cancelDiagnosticLogging()</dfn> method cancels an
 ongoing diagnostic logging session and deletes all logged data associated with
 the session.
 
