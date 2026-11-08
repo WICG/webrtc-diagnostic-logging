@@ -105,7 +105,7 @@ When this method is invoked, the [= user agent =] MUST run the following steps:
 1. If the {{RTCPeerConnection/[[RTCDiagnosticLoggingSessionId]]}} internal
         slot is not <code>null</code>, [=exception/throw=] an {{"InvalidStateError"}}
         {{DOMException}}.
-1. Let |sesssionId| be a randomly generated UUID [[rfc4122]]. To avoid
+1. Let |sessionId| be a randomly generated UUID [[rfc4122]]. To avoid
         fingerprinting, implementations SHOULD use the form in section 4.4 of
         RFC 4122 when generating UUIDs.
 1. Set {{RTCPeerConnection/[[RTCDiagnosticLoggingSessionId]]}} to |sessionId|.
@@ -131,7 +131,7 @@ When this method is invoked, the [= user agent =] MUST run the following steps:
 1. Set {{RTCPeerConnection/[[RTCDiagnosticLoggingSessionId]]}} to
         <code>null</code>.
 1. [=In parallel=], stop the logging session identified with
-        {{RTCPeerConnection/[[RTCDiagnosticLoggingSessionId]]}}.
+        |sessionId|.
 
 The user agent MUST NOT log any WebRTC-related activity once the logging session
 has stopped.
@@ -151,7 +151,7 @@ When this method is invoked, the [= user agent =] MUST run the following steps:
 1. Set {{RTCPeerConnection/[[RTCDiagnosticLoggingSessionId]]}} to
         <code>null</code>.
 1. [=In parallel=], cancel the logging session identified with
-        {{RTCPeerConnection/[[RTCDiagnosticLoggingSessionId]]}}.
+        |sessionId|.
 
 Once the logging session is canceled, the [=user agent=] MUST NOT
 log any WebRTC-related activity and the [=user agent=] MUST have
