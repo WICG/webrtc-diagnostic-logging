@@ -98,10 +98,10 @@ attempts to start a diagnostic logging session.
 When this method is invoked, the [= user agent =] MUST run the following steps:
 
 1. Let |options| be the first argument of this method.
-1. Let |metadata| be |options|'s {{RTCDiagnosticLoggingOptions/metadata}} member.
+1. Let |metadata| be |options|'s {{RTCDiagnosticLoggingOptions/metadata}} member if present, or an empty [=map=] otherwise.
 1. If |metadata|'s [=map/size=] is greater than 5, or if any [=map/entry=]
-        |key| → |value| of |metadata| has a  [=string/length=] greater than 100,
-        return a promise [=rejected=] with a {{TypeError}}.
+        |key| → |value| of |metadata| has a key or a value with a [=string/length=] greater than 100,
+        [=exception/throw=] a {{TypeError}}.
 1. If the {{RTCPeerConnection/[[RTCDiagnosticLoggingSessionId]]}} internal
         slot is not <code>null</code>, [=exception/throw=] an {{"InvalidStateError"}}
         {{DOMException}}.
